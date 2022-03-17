@@ -9,7 +9,8 @@
 int main() {
     BloomFilter bloomFilter;
 
-    std::bitset<4> bitset;
-    bitset.set(1, true);
-    std::cout << bitset[1] << " " << bitset[2] << std::endl;
+    bloomFilter.add("SCU");
+    bloomFilter.add("China");
+
+    std::cout << bloomFilter.find("SCU") << " " << bloomFilter.find("America") << std::endl;
 }

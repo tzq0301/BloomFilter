@@ -17,14 +17,16 @@ class BloomFilter {
 public:
     void add(const std::string&);
 
+    bool find(const std::string&);
+
 private:
-    static constexpr int HASH_NUM = 5;
+    static constexpr auto HASH_NUM = 5;
 
-    static constexpr auto HASH_FUNCTION = std::hash<std::string>{};
+    static const std::hash<std::string> HASH_FUNCTION;
 
-    static constexpr auto HASH_FACTORIES = std::array<int, HASH_NUM>{5, 7, 11, 13, 17};
+    static const std::array<int, HASH_NUM> HASH_FACTORIES;
 
-    static constexpr auto MAX = 17;
+    static constexpr auto MAX = 97;
 
     std::bitset<MAX> BITSET = std::bitset<MAX>{};
 };
